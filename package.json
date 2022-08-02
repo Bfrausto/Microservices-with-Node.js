@@ -1,0 +1,25 @@
+{
+  "name": "microservicion-con-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bfrausto/Microservicion-con-Node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bfrausto/Microservicion-con-Node.js/issues"
+  },
+  "homepage": "https://github.com/Bfrausto/Microservicion-con-Node.js#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nanoid": "^2.1.11",
+    "swagger-ui-express": "^4.5.0"
+  }
+}
