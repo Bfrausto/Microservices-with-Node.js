@@ -16,6 +16,8 @@ const check = {
     own: function (req, owner) {
         const decoded = decodeHeader(req);
         console.log(decoded);
+        console.log(owner);
+
 
         if (decoded.id !== owner) {
             throw error('Not allowed', 401);
@@ -24,11 +26,11 @@ const check = {
 }
 function getToken(auth) {
     if (!auth) {
-        throw new Error('No token provided');
+         throw error('No token provided', 400);
     }
 
     if (auth.indexOf('Bearer ') === -1) {
-        throw new Error('Invalid format');
+         throw error('Invalid format', 400);
     }
 
     let token = auth.replace('Bearer ', '');

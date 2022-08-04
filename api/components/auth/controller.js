@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const auth = require('../../../auth/index');
+const error = require('../../../utils/error');
 const TABLA = 'auth';
 
 module.exports = function (injectedStore) {
@@ -10,13 +11,12 @@ module.exports = function (injectedStore) {
 
     async function login(username, password) {
         const data = await store.query(TABLA, { username: username });
-
         return bcrypt.compare(password, data.password)
             .then(areEquals => {
                 if (areEquals) {
                     return auth.sign(data);
                 } else {
-                    throw new Error('Bad request');
+                    throw new error('Bad request', 400);
                 }
             });
     }
