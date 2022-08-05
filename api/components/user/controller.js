@@ -31,6 +31,7 @@ module.exports = function (injectedStore) {
             })
             console.log('usuario',user);
         }
+
         return store.upsert(TABLE, user);
     }
 
